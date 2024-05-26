@@ -24,7 +24,7 @@ export default function Home() {
         <h1 className='text-3xl text-center bg-gradient-to-r from-red-600 to-purple-500 text-transparent bg-clip-text transition duration-500'>
           Google Meet Clone
         </h1>
-
+        <hr className='border-white w-[50%] mt-3' />
         <div className="flex flex-col items-center mt-6 w-full">
           <input
             className='text-black text-lg p-1 rounded w-9/12 mb-3 text-center'
@@ -36,8 +36,9 @@ export default function Home() {
             Join Room
           </button>
         </div>
-        <span className="my-3 text-xl">--------------- OR ---------------</span>
-        <button className='bg-teal-600 py-2 px-4 rounded' onClick={createAndJoin}>
+        <span className="my-3 text-xl"> OR </span>
+        <hr className='border-white w-full' />
+        <button className='bg-teal-600 py-2 px-4 rounded mt-5 mb-3' onClick={createAndJoin}>
           Create a new room
         </button>
       </div>
