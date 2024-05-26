@@ -1,10 +1,8 @@
-// components/ChatBox/index.js
 import { useState, useEffect } from "react";
 import styles from "./ChatBox.module.css";
 import { useSocket } from "@/context/socket";
 
-
-const ChatBox = ({  roomId }) => {
+const ChatBox = ({ roomId }) => {
   const socket = useSocket();
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
@@ -13,7 +11,7 @@ const ChatBox = ({  roomId }) => {
     if (!socket) return;
 
     const handleMessageReceive = (messageObject) => {
-      setMessages((prev) => [...prev, messageObject]);
+      setMessages((prevMessages) => [...prevMessages, messageObject]);
     };
 
     socket.on("receive-message", handleMessageReceive);
@@ -27,7 +25,6 @@ const ChatBox = ({  roomId }) => {
     if (message.trim() === "") return;
     const messageObject = { message, roomId, userId: socket.id };
     socket.emit("send-message", messageObject);
-    // setMessages((prev) => [...prev, messageObject]);
     setMessage("");
   };
 
@@ -35,7 +32,7 @@ const ChatBox = ({  roomId }) => {
     <div className={styles.chatBox}>
       <div className={styles.messages}>
         {messages.map((msg, index) => (
-          <div key={index} className={styles.message}>
+          <div key={index} className={`${styles.message} ${msg.userId === socket.id ? styles.activeMessage : ""}`}>
             <strong>{msg.userId}: </strong>
             {msg.message}
           </div>

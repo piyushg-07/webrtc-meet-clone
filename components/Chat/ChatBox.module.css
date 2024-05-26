@@ -22,6 +22,10 @@
   margin-bottom: 5px;
 }
 
+.activeMessage{
+  color:rgb(38, 245, 200);
+}
+
 .inputBox {
   display: flex;
 }
