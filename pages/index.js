@@ -22,7 +22,7 @@ export default function Home() {
     <div className="h-screen flex items-center justify-center">
       <div className="w-4/12 p-2 border border-teal-500 rounded mt-8 text-white flex flex-col items-center justify-center shadow-teal-700 shadow-lg">
         <h1 className='text-3xl text-center bg-gradient-to-r from-red-600 to-purple-500 text-transparent bg-clip-text transition duration-500'>
-          EchoMeet
+          Echo Meet 
         </h1>
         <hr className='border-white w-[50%] mt-3' />
         <div className="flex flex-col items-center mt-6 w-full">
